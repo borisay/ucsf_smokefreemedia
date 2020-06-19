@@ -1,0 +1,128 @@
+// @todo These are really layout/template styles.
+
+.page-node-type-company,
+.page-node-type-author,
+.page-node-type-article,
+.page-node-type-magazine-article,
+.page-node-type-narrow-page,
+.page-node-type-news-center,
+.page-node-type-news-package,
+.page-node-type-trending,
+.path-webform { // PL: .main-article
+  background: $c-background-gray;
+
+  .main-content {
+    background: $white;
+
+    &.narrow-page {
+      background: transparent;
+      position: relative;
+    }
+  }
+
+  h2 {
+    @include fs-articles-title;
+  }
+
+  .eyebrow-title {
+    @include eyebrow;
+  }
+
+  .small-title {
+    @include fs-small-title;
+  }
+
+  @include breakpoint($new-large) {
+    .main-content {
+      @include grid;
+
+      &.narrow-page {
+        @include grid-fifteen;
+      }
+
+      grid-template-rows: auto auto;
+    }
+  }
+}
+
+.page-node-type-narrow-page,
+.path-webform {
+  .narrow-page {
+    margin-bottom: $space-ten;
+  }
+}
+
+.page-node-type-full-width-page,
+.path-taxonomy { // PL: .main-article
+  background: $c-background-gray;
+
+  .main-content {
+    background: $white;
+  }
+
+  h2{
+    @include fs-articles-title;
+    margin-bottom: 16px;
+
+    &.small-title {
+      @include fs-small-title;
+    }
+
+    /* &.layout__heading {
+      @include fs-heading-two-md;
+    } */
+  }
+}
+
+.path-taxonomy { // PL: .main-article
+  h2{
+    &.layout__heading {
+      @include fs-articles-title;
+      margin-bottom: $space-two;
+    }
+  }
+}
+
+.page-node-type-homepage { // PL: .main-article
+  background: $c-background-gray;
+}
+
+.bk-color-white,
+.bk-color-white .page_narrow blockquote,
+.bk-color-white .blockquote .blockquote-content,
+.bk-color-white .ucsfcallout,
+.bk-color-white .recommended-articles__title,
+.bk-color-white .paragraph-text-block blockquote {
+  background: $bk-color-white;
+}
+
+.bk-color-white .ucsfcallout,
+.bk-color-white .recommended-articles__title,
+.bk-color-white .paragraph-text-block blockquote {
+  @include breakpoint($new-small-max) {
+    border-top: 1px solid $c-gray-lighter;
+    border-bottom: 1px solid $c-gray-lighter;
+    margin-right: 0;
+    margin-left: 0;
+    float: none;
+    width: auto;
+  }
+}
+
+.bk-color-light-teal,
+.bk-color-light-teal .page_narrow blockquote,
+.bk-color-light-teal .blockquote .blockquote-content,
+.bk-color-light-teal .ucsfcallout,
+.bk-color-light-teal .recommended-articles__title,
+.bk-color-light-teal .paragraph-text-block blockquote {
+  background: $bk-color-teal;
+}
+
+.bk-color-light-blue,
+.bk-color-light-blue .page_narrow blockquote,
+.bk-color-light-blue .blockquote .blockquote-content,
+.bk-color-light-blue .ucsfcallout,
+.bk-color-light-blue .recommended-articles__title,
+.bk-color-light-blue .paragraph-text-block blockquote {
+  background: $bk-color-blue;
+}

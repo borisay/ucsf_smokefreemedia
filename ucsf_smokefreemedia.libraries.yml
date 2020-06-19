@@ -1,0 +1,14 @@
+style:
+  css:
+    theme:
+      assets/css/style.css: {}
+
+  dependencies:
+    - core/jquery
+    - core/drupal
+
+base:
+  version: VERSION
+  css:
+    theme:
+      assets/css/style.css: {}

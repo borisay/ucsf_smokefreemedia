@@ -1,0 +1,185 @@
+// Breakpoints.
+// Documentation: http://breakpoint-sass.com/
+//------------------------------------------------------------------------------
+
+$new-x-small: 600px;
+$new-x-small-max: max-width 599px;
+$new-small: 769px;
+$new-small-max: max-width 768px;
+$new-medium: 850px;
+$new-large: 1050px;
+$new-xl: 1280px;
+$full-width-elements: $new-xl + 40px;
+$font-large: 600px;
+$font-large-max: 599px;
+$bp-until-large: max-width 849px; // used to hide top menus
+
+//phones should really be 320-500, the One Plus 3 being 480 viewport size
+$bp-xs: 320px; //should be used for older android phones still, this is like baseline, Galaxy S5 is 360 viewport.
+$bp-xs-medium: 375px;  //use for iPhone X other iPhones are 414 viewport, Galaxy note 9 is 414 viewport.
+$bp-small: 480px; // used in gallery
+$bp-medium: 600px; //used all over the place -- keep
+$bp-medium-plus: 970px; // Needs a better name. Used in the News Search filter
+
+$bp-large: $new-medium; //was 900px
+$bp-page-narrow: 1050px;
+$bp-xl: $new-xl;
+$bp-menu: 1360px; // Needs a better name.
+$bp-full: 1440px;
+
+$bp-main-menu-medium: 43em;
+
+// Colors
+//------------------------------------------------------------------------------
+
+$c-navy: #052049;
+$c-dark-navy: #121a31;
+$c-teal: #058488;
+$c-green: #568001;
+$c-blue: #007cbe;
+$c-blue-link: #0071ad;
+$c-blue-link-rollover: #e8f4fa;
+$orange: #f26d04;
+$c-purple: #716fb2;
+$c-red: #eb093c;
+$c-yellow: #fd0;
+$c-unpublished: #fdecf0;
+
+$c-black: #000;
+$c-white: #fff;
+$c-near-white: #efefef;
+$c-grey-pale: #f2f4f6;
+$c-gray-lightest: #ddd;
+$c-gray-lighter: #d1d3d3;
+$c-gray-light: #b4b9bf;
+$c-near-medium: #939393;
+$c-gray: #333;
+$c-gray-border: #9ba6b6;
+$c-gray-dark: #666;
+$c-gray-darker: #525860;
+$c-gray-blue: #506380;
+$c-background-gray: #f2f4f6;
+$c-twitter-blue: #f0faff;
+$c-border-grey-blue: #d5d9de;
+
+$bk-color-teal: #e8f6f7;
+$bk-color-blue: #e8f4fa;
+$bk-color-white: $c-white;
+
+$c-print-blue: #178ccb;
+$c-print-teal: #18a3ac;
+$c-print-green: #90bd31;
+$c-print-orange: #f48024;
+$c-print-red: #ec1848;
+
+//brand colors
+$facebook-color: #3b5998;
+$twitter-color: #1da1f2;
+$reddit-color: #ff4500;
+
+// @todo Get all these values.
+$areas: (
+  ("about", $c-purple, $c-purple),
+  ("about-menu", $c-navy, $c-navy),
+  ("campus-news", $c-navy, $c-navy),
+  ("education", $c-green, $c-print-green),
+  ("location", $c-green, $c-print-green),
+  ("news-center", $c-purple, $c-purple),
+  ("news--media", $c-purple, $c-purple),
+  ("patient-care", $c-blue, $c-print-blue),
+  ("research", $c-teal, $c-print-teal),
+);
+
+$color-map: (
+  blue: $c-blue,
+  gray: $c-gray-blue,
+  green: $c-green,
+  teal: $c-teal,
+  navy: $c-navy,
+  purple: $c-purple,
+  yellow: $c-yellow
+);
+// Font Families
+//------------------------------------------------------------------------------
+
+$fa-font-path: "../../fonts/fontawesome/webfonts";
+$font-helvetica-neue-light: "HelveticaNeueLTW04-45Light", "HelveticaNeue", "Helvetica", "Arial", sans-serif;
+$font-helvetica-neue-roman: "HelveticaNeueLTW04-55Roman", "HelveticaNeue", "Helvetica", "Arial", sans-serif;
+$font-helvetica-neue-medium: "HelveticaNeueLTW04-65Medium", "HelveticaNeue", "Helvetica", "Arial", sans-serif;
+$font-helvetica-neue-bold: "HelveticaNeueLTW06-75Bold", "HelveticaNeue", "Helvetica", "Arial", sans-serif;
+$font-granjon: "GranjonLTW01-Roman", "Garamond", "Times New Roman", serif;
+$font-helvetica-neue-regular: $font-helvetica-neue-roman;
+
+// Font Weights
+//------------------------------------------------------------------------------
+
+$fw-light: 200;
+$fw-book: 300;
+$fw-medium: 500;
+$fw-bold: 700;
+
+// Grid
+//------------------------------------------------------------------------------
+
+$grid-container: 1400px;
+$grid-columns: 12;
+$grid-column-gap: 33.818181818px; // ((1400-(34*2))-(80*12))/11 = 33.818181818
+$grid-row-gap: 40px;
+$grid-gutter: $grid-row-gap $grid-column-gap;
+$grid-gutter-susy: $grid-column-gap;
+
+// Grid Debugging
+//------------------------------------------------------------------------------
+
+// Setting $grid-debug to true shows the grid lines via @page-container.
+$grid-debug: false;
+// Setting $grid-disable disables grid to test fallbacks.
+$grid-disable: false;
+
+// Susy Layouts
+//------------------------------------------------------------------------------
+
+$susy: (
+  'svg-grid-colors': hsl(180, 50%, 80%),
+  'columns': susy-repeat($grid-columns),
+  'gutters': $grid-gutter-susy,
+  'container-spread': 'wider'
+);
+$susy-narrow: (
+  'columns': susy-repeat(($grid-columns - 2)),
+  'gutters': $grid-gutter-susy,
+  'container-spread': 'narrow'
+);
+$susy-two: (
+  'columns': susy-repeat(2),
+  'gutters': 0,
+  'container-spread': 'narrow'
+);
+$susy-three: (
+  'columns': susy-repeat(3),
+  'gutters': 0,
+  'container-spread': 'narrow'
+);
+$susy-four: (
+  'columns': susy-repeat(4),
+  'gutters': 0,
+  'container-spread': 'narrow'
+);
+
+// Z-indices
+//------------------------------------------------------------------------------
+$z-slicknav-panel-open: 2;
+$z-footer: 500;
+$z-gallery: 700;
+$z-quicklinks-open-page: 780;
+$z-quicklinks: 800;
+$z-quicklinks-menu: 900;
+$z-dropdown: 1000;
+$z-news-search-filter: 1100;
+
+// Animation transitions
+//------------------------------------------------------------------------------
+
+$transition-time: .3s;
+$transition-time-short: .2s;
+$transition-time-long: .5s;

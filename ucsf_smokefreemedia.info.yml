@@ -1,0 +1,27 @@
+name: UCSF - Smokefreemedia Theme
+type: theme
+base theme: ucsf
+description: 'Sub Theme for UCSF for Smokefreemedia site'
+core: 8.x
+
+regions:
+  header: "Header - Logo, Main Menu"
+  title: "Title"
+  tabs: "Tabs"
+  content: "Content"
+  footer: "Footer"
+  highlighted: "Highlighted"
+  help: "Help"
+  hidden: "Hidden"
+
+component-libraries:
+  theme:
+    paths:
+      - ../ucsf/templates/components
+      - templates/components
+
+libraries:
+  - ucsf/assets/css/style
+  - ucsf_smokefreemedia/base
+
+
