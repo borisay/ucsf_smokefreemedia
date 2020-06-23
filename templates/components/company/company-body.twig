@@ -1,12 +1,5 @@
 <div{{ content_attributes.addClass('content page_narrow') }}>
-  {{ content|without('body') }}
-  {% if content.body.0 %}
-    <details>
-      <summary>More Information</summary>
-      {{ content.body }}
-    </details>
-  {% endif %}
-
+  {{ content }}
 </div>
 
     {{ content.field_content_panel }}
